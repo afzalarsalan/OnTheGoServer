@@ -1,0 +1,16 @@
+{
+    "name": "On-The-Go",
+    "description" : "On-The-Go",
+    "private": true,
+  	"scripts": {
+    	"start": "node app.js"
+  	},
+    "dependencies": {
+        "watson-developer-cloud": "*",
+        "node-cloud-vision-api": "*",
+        "url": "*"
+    },
+    "engines" : {
+        "node" : "*"
+    }
+}
