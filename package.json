@@ -8,7 +8,8 @@
     "dependencies": {
         "watson-developer-cloud": "*",
         "node-cloud-vision-api": "*",
-        "url": "*"
+        "url": "*",
+        "querystring": "*"
     },
     "engines" : {
         "node" : "*"
