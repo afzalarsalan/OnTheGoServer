@@ -14,7 +14,7 @@ var visual_recognition = new VisualRecognitionV3({
 });
 
 http.createServer(function (request, response) {
-
+  console.log('request.url :',request.url);
    if (request.method == 'POST') {
       var body = '';
 
