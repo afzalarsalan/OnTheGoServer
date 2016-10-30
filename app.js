@@ -20,7 +20,6 @@ http.createServer(function (request, response) {
 
       request.on('data', function (data) {
           body += data;
-
           // Too much POST data, kill the connection!
           // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
           if (body.length > 1e6)
@@ -29,7 +28,10 @@ http.createServer(function (request, response) {
 
       request.on('end', function () {
           var post = qs.parse(body);
-          console.log('post 123:',post);
+          console.log('post.imageData:',post.imageData);
+          res.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
+          res.write('Hello');
+          res.end();
       });
   } 
   /*
