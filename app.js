@@ -73,6 +73,9 @@ function callGoogleAPI(imageData, response) {
           ];
            
           childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+            console.log('err ',err);
+            console.log('stdout ',stdout);
+            console.log('stderr ',stderr);
             if(stdout){
               response.writeHead(200,  {"Content-Type": "application/json"});
               var responseObjectTemp = {};
