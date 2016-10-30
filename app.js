@@ -67,6 +67,9 @@ function callGoogleAPI(imageData) {
               if (!err) {
                 console.log("Trailer Link" + vidlink);
               }
+              else {
+                console.log(err);
+              }
             })
           }
         });
