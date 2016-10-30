@@ -7,9 +7,7 @@
   	},
     "dependencies": {
         "watson-developer-cloud": "*",
-        "node-cloud-vision-api": "*",
-        "url": "*",
-        "querystring": "*"
+        "node-cloud-vision-api": "*"
     },
     "engines" : {
         "node" : "*"

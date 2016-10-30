@@ -5,7 +5,6 @@ var VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3'
 var fs = require("fs"),
     http = require("http"),
     url = require("url"),
-    qs = require('querystring'),
     path = require("path");
 
 var visual_recognition = new VisualRecognitionV3({
@@ -14,25 +13,51 @@ var visual_recognition = new VisualRecognitionV3({
 });
 
 http.createServer(function (request, response) {
-  console.log('request.url :',request.url);
    if (request.method == 'POST' && request.url.indexOf('/index') > -1) {
       var body = '';
       request.on('data', function (data) {
           body += data;
-          // Too much POST data, kill the connection!
-          // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
           if (body.length > 1e6)
               request.connection.destroy();
       });
       request.on('end', function () {
-          //var post = JSON.parse(body);
           var postTemp = JSON.parse(body);
-          console.log('post:',postTemp);
           console.log('post.imageData:',postTemp.imageData);
           response.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
           response.write('Hello');
           response.end();
       });
   }
-
 }).listen(process.env.PORT||8888);
+
+
+function callGoogleAPI(imageData){
+  console.log('Inside callGoogleAPI');
+  var req = new vision.Request({
+    image: new vision.Image({
+      base64: imageData
+    }),
+    features: [
+      new vision.Feature('TEXT_DETECTION', 10),
+      new vision.Feature('LOGO_DETECTION', 10),
+      new vision.Feature('LABEL_DETECTION', 10),
+    ]
+  })
+
+  // send single request
+  vision.annotate(req).then((res) => {
+    // handling response
+    console.log(JSON.stringify(res.responses))
+    var resultObject = res.responses[0];
+    if(resultObject.logoAnnotations){
+      var logoAnnotation = resultObject.logoAnnotations;
+      console.log('logoAnnotation',logoAnnotation);
+    }
+    if(resultObject.textAnnotations){
+      var textAnnotation = resultObject.textAnnotations[0].description;
+      console.log('textAnnotation Result',textAnnotation.split('\n'));
+    }
+  }, (e) => {
+    console.log('Error: ', e)
+  })
+}
