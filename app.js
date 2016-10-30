@@ -59,7 +59,7 @@ function callGoogleAPI(imageData) {
       var textAnnotation = resultObject.textAnnotations[0].description;
       console.log('textAnnotation Result', textAnnotation.split('\n'));
       textAnnotation.split('\n').forEach(function (val) {
-        imdb.getReq({ name: val, year: 2016 }, function (data) {
+        imdb.getReq({ name: val, year: 2016 }, function (err, data) {
           console.log(data);
         });
       });
