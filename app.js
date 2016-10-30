@@ -70,6 +70,9 @@ function callGoogleAPI(imageData) {
               if(!error && response.statusCode == 200) {
                 console.log(body);
               }
+              else {
+                console.log(err);
+              }
             })
           }
         });
