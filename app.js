@@ -64,12 +64,7 @@ function callGoogleAPI(imageData) {
           if (!err) {
             console.log(data);
             var vidlink = trailer(data.name, function (err, url) {
-              if (!err) {
-                console.log("Trailer Link" + vidlink);
-              }
-              else {
-                console.log(err);
-              }
+                console.log(data);
             })
           }
         });
