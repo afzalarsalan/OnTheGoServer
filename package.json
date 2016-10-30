@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "imdb-api": "^2.2.0",
+    "movie-trailer": "^1.0.3",
     "node-cloud-vision-api": "*",
     "watson-developer-cloud": "*"
   },

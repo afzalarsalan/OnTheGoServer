@@ -6,7 +6,8 @@ var fs = require("fs"),
   http = require("http"),
   url = require("url"),
   path = require("path"),
-  imdb = require("imdb-api");
+  imdb = require("imdb-api"),
+  trailer = require("movie-trailer");
 
 var visual_recognition = new VisualRecognitionV3({
   api_key: '513bbcd9cbce91d28ba03fd2492cde32f3b66f9a'/*'37745a59c469e745974eac39b50a52752a803887'*/,
@@ -60,8 +61,13 @@ function callGoogleAPI(imageData) {
       console.log('textAnnotation Result', textAnnotation.split('\n'));
       textAnnotation.split('\n').forEach(function (val) {
         imdb.getReq({ name: val, year: 2016 }, function (err, data) {
-          if(!err) {
-          console.log(data);
+          if (!err) {
+            console.log(data);
+            var vidlink = trailer(data.name, function (err, url) {
+              if (!err) {
+                console.log("Trailer Link" + vidlink);
+              }
+            })
           }
         });
       });
