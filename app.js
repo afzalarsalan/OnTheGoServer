@@ -15,9 +15,8 @@ var visual_recognition = new VisualRecognitionV3({
 
 http.createServer(function (request, response) {
   console.log('request.url :',request.url);
-   if (request.method == 'POST') {
+   if (request.method == 'POST' && request.url.indexOf('/index') > -1) {
       var body = '';
-
       request.on('data', function (data) {
           body += data;
           // Too much POST data, kill the connection!
@@ -25,22 +24,13 @@ http.createServer(function (request, response) {
           if (body.length > 1e6)
               request.connection.destroy();
       });
-
       request.on('end', function () {
           var post = qs.parse(body);
           console.log('post.imageData:',post.imageData);
-          res.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
-          res.write('Hello');
-          res.end();
+          response.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
+          response.write('Hello');
+          response.end();
       });
-  } 
-  /*
-  if(req.url.indexOf('/index') >= -1){
-    console.log('query.imageData_zxc :'+query.imageData);
-    res.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
-    res.write('Hello');
-    res.end();      
   }
-  */
 
 }).listen(process.env.PORT||8888);

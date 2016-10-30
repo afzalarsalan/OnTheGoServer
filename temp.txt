@@ -382,3 +382,19 @@ var link = 'http://localhost:8888/index';
 $http.post(link, {imageData : }).then(function (res){
     $scope.response = res.data;
 });
+
+
+
+var link = 'http://nikola-breznjak.com/_testings/ionicPHP/api.php';
+$http.post(link, {imageData : $scope.data.username}).then(function (res){
+    $scope.response = res.data;
+});
+
+ /*
+  if(req.url.indexOf('/index') >= -1){
+    console.log('query.imageData_zxc :'+query.imageData);
+    res.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
+    res.write('Hello');
+    res.end();      
+  }
+  */
