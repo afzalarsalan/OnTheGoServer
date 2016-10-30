@@ -65,7 +65,7 @@ function callGoogleAPI(imageData) {
             console.log(data);
             var vidlink = trailer(data.name, function (err, url) {
                 console.log(data);
-            })
+            });
           }
         });
       });
