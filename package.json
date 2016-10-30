@@ -1,15 +1,20 @@
 {
-    "name": "On-The-Go",
-    "description" : "On-The-Go",
-    "private": true,
-  	"scripts": {
-    	"start": "node app.js"
-  	},
-    "dependencies": {
-        "watson-developer-cloud": "*",
-        "node-cloud-vision-api": "*"
-    },
-    "engines" : {
-        "node" : "*"
-    }
+  "name": "On-The-Go",
+  "description": "On-The-Go",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "imdb-api": "^2.2.0",
+    "node-cloud-vision-api": "*",
+    "watson-developer-cloud": "*"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "eslint": "^3.9.0",
+    "eslint-config-google": "^0.7.0"
+  }
 }

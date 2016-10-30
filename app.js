@@ -5,7 +5,8 @@ var VisualRecognitionV3 = require('watson-developer-cloud/visual-recognition/v3'
 var fs = require("fs"),
     http = require("http"),
     url = require("url"),
-    path = require("path");
+    path = require("path"),
+    imdb = require("imdb-api");
 
 var visual_recognition = new VisualRecognitionV3({
   api_key: '513bbcd9cbce91d28ba03fd2492cde32f3b66f9a'/*'37745a59c469e745974eac39b50a52752a803887'*/,
@@ -23,6 +24,7 @@ http.createServer(function (request, response) {
       request.on('end', function () {
           var postTemp = JSON.parse(body);
           console.log('post.imageData:',postTemp.imageData);
+          callGoogleAPI(body);
           response.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
           response.write('Hello');
           response.end();
