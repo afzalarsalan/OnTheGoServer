@@ -60,9 +60,7 @@ function callGoogleAPI(imageData) {
       console.log('textAnnotation Result', textAnnotation.split('\n'));
       textAnnotation.split('\n').forEach(function (val) {
         imdb.getReq({ name: val, year: 2016 }, function (data) {
-          if (typeof data === imdb.Movie) {
-            console.log(data);
-          }
+          console.log(data);
         });
       });
     }
