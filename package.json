@@ -9,6 +9,8 @@
     "imdb-api": "^2.2.0",
     "movie-trailer": "^1.0.3",
     "node-cloud-vision-api": "*",
+    "request": "^2.76.0",
+    "showtimes": "^2.1.2",
     "watson-developer-cloud": "*"
   },
   "engines": {

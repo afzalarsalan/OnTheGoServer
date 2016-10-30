@@ -1,3 +1,5 @@
+
+
 var vision = require('node-cloud-vision-api');
 vision.init({ auth: 'AIzaSyCbDDuE_7XnbPTfJtMhgWWETzQTcnpKRlY' });
 
@@ -63,9 +65,12 @@ function callGoogleAPI(imageData) {
         imdb.getReq({ name: val, year: 2016 }, function (err, data) {
           if (!err) {
             console.log(data);
-            var vidlink = trailer(data.name, function (err, url) {
-                console.log(data);
-            });
+            console.log(data.imdbid);
+            request('http://api.traileraddict.com/?imdb='+ data.imdbid +'&count=4&width=680', function (error, response, body) {
+              if(!error && response.statusCode == 200) {
+                console.log(body);
+              }
+            })
           }
         });
       });
