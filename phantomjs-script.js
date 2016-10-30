@@ -20,7 +20,7 @@ console.log(status);
 page.evaluate(function(){
 //window.onload = init();
 console.log("Program entered");
-document.getElementById('mce-EMAIL').value="mnav4692@gmail.com";
+document.getElementById('mce-EMAIL').value="karun.chillz@outlook.com";
 //$("#mce-EMAIL").val="karun.devanidhi@tamu.edu";
 //console.log($("mce-EMAIL").val);
 //document.getElementById("mce-FNAME").value="karun.devanidhi@tamu.edu";
