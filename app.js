@@ -28,13 +28,13 @@ http.createServer(function (request, response) {
     request.on('end', function () {
       var postTemp = JSON.parse(body);
       //console.log('post.imageData:',postTemp.imageData);
-      callGoogleAPI(postTemp.imageData);
+      callGoogleAPI(postTemp.imageData,response);
     });
   }
 }).listen(process.env.PORT || 8888);
 
 
-function callGoogleAPI(imageData) {
+function callGoogleAPI(imageData, response) {
   console.log('Inside callGoogleAPI');
   var req = new vision.Request({
     image: new vision.Image({
