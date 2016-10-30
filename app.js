@@ -29,9 +29,6 @@ http.createServer(function (request, response) {
       var postTemp = JSON.parse(body);
       //console.log('post.imageData:',postTemp.imageData);
       callGoogleAPI(postTemp.imageData);
-      response.writeHead(200, { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With" });
-      response.write('Hello');
-      response.end();
     });
   }
 }).listen(process.env.PORT || 8888);
@@ -53,6 +50,7 @@ function callGoogleAPI(imageData) {
   // send single request
   vision.annotate(req).then((res) => {
     // handling response
+    var responseObject = {};
     console.log(JSON.stringify(res.responses))
     var resultObject = res.responses[0];
     if (resultObject.logoAnnotations) {
@@ -66,29 +64,53 @@ function callGoogleAPI(imageData) {
         imdb.getReq({ name: val, year: 2016 }, function (err, data) {
           if (!err) {
             console.log(data);
-            //console.log(data.imdbid);
+
+            responseObject.title = data.title;
+            responseObject.runtime = data.runtime;
+            responseObject.year = data.year;
+
+            responseObject.genres = data.genres;
+            if(data.rated === 'PG-13')
+              responseObject.rated = 'Parents Strongly Cautioned – some material may be inappropriate for children under 13';
+            else if(data.rated === 'PG')
+              responseObject.rated = 'Parental Guidance Suggested – some material may not be suitable for children';
+            else if(data.rated === 'R')
+              responseObject.rated = 'Restricted – under 17 requires accompanying parent or adult guardian';
+            else if(data.rated === 'NC-17')
+              responseObject.rated = 'No children under 17 admitted [1990–1996] / No one 17 and under admitted';
+            else
+              responseObject.rated = 'General Audiences – all ages admitted';
+
+            responseObject.director = data.director;
+            responseObject.writer = data.writer;
+
+            responseObject.actors = data.actors;
+
+            responseObject.plot = data.plot;
+
+            responseObject.languages = data.languages;
+            responseObject.country = data.country;
+            responseObject.awards = data.awards;
+
+            responseObject.rating = data.rating;
+            responseObject.metascore = data.metascore;
+            responseObject.votes = data.votes;
+
             api = new Showtimes(77004);
             api.getMovies(function(error, movieList){
-              console.log('movieList',movieList);
               movieList.forEach(function(item,index){
-                if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1)
+                if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1){
                   console.log('item found',item);
+                  responseObject.trailer = item.trailer;
+                  responseObject.theaters = item.theaters;
+                }
+                if(movieList.length == (index+1)){
+                  response.writeHead(200,  {"Content-Type": "application/json"});
+                  console.log('responseObject ',responseObject);
+                  response.end(JSON.stringify(responseObject));                  
+                }
               });
             });
-            /*api.getTheaters(function (err, theaters) {
-              console.log('theaters :',theaters);
-              api.getMovie((theaters[0].movies[0].id), function (err2, movie) {
-                console.log('movie :',movie);
-              })
-            });*/
-            /*request('http://api.traileraddict.com/?imdb='+ data.imdbid +'&count=4&width=680', function (error, response, body) {
-              if(!error && response.statusCode == 200) {
-                console.log(body);
-              }
-              else {
-                console.log(err);
-              }
-            })*/
           }
         });
       });

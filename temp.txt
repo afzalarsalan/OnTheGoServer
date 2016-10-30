@@ -401,3 +401,20 @@ $http.post(link, {imageData : $scope.data.username}).then(function (res){
     res.end();      
   }
   */
+
+----
+
+            /*api.getTheaters(function (err, theaters) {
+              console.log('theaters :',theaters);
+              api.getMovie((theaters[0].movies[0].id), function (err2, movie) {
+                console.log('movie :',movie);
+              })
+            });*/
+            /*request('http://api.traileraddict.com/?imdb='+ data.imdbid +'&count=4&width=680', function (error, response, body) {
+              if(!error && response.statusCode == 200) {
+                console.log(body);
+              }
+              else {
+                console.log(err);
+              }
+            })*/
