@@ -66,14 +66,21 @@ function callGoogleAPI(imageData) {
         imdb.getReq({ name: val, year: 2016 }, function (err, data) {
           if (!err) {
             console.log(data);
-            console.log(data.imdbid);
+            //console.log(data.imdbid);
             api = new Showtimes(77004);
-            api.getTheaters(function (err, theaters) {
+            api.getMovies(function(error, movieList){
+              console.log('movieList',movieList);
+              movieList.forEach(function(item,index){
+                if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1)
+                  console.log('item found',item);
+              });
+            });
+            /*api.getTheaters(function (err, theaters) {
               console.log('theaters :',theaters);
               api.getMovie((theaters[0].movies[0].id), function (err2, movie) {
                 console.log('movie :',movie);
               })
-            });
+            });*/
             /*request('http://api.traileraddict.com/?imdb='+ data.imdbid +'&count=4&width=680', function (error, response, body) {
               if(!error && response.statusCode == 200) {
                 console.log(body);
