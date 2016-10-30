@@ -9,7 +9,8 @@ var fs = require("fs"),
   url = require("url"),
   path = require("path"),
   imdb = require("imdb-api"),
-  trailer = require("movie-trailer");
+  trailer = require("movie-trailer"),
+  Showtimes = require('showtimes');
 
 var visual_recognition = new VisualRecognitionV3({
   api_key: '513bbcd9cbce91d28ba03fd2492cde32f3b66f9a'/*'37745a59c469e745974eac39b50a52752a803887'*/,
@@ -66,14 +67,21 @@ function callGoogleAPI(imageData) {
           if (!err) {
             console.log(data);
             console.log(data.imdbid);
-            request('http://api.traileraddict.com/?imdb='+ data.imdbid +'&count=4&width=680', function (error, response, body) {
+            api = new Showtimes(77004);
+            api.getTheaters(function (err, theaters) {
+              console.log('theaters :',theaters);
+              api.getMovie((theaters[0].movies[0].id), function (err2, movie) {
+                console.log('movie :',movie);
+              })
+            });
+            /*request('http://api.traileraddict.com/?imdb='+ data.imdbid +'&count=4&width=680', function (error, response, body) {
               if(!error && response.statusCode == 200) {
                 console.log(body);
               }
               else {
                 console.log(err);
               }
-            })
+            })*/
           }
         });
       });
