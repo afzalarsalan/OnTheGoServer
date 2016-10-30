@@ -94,10 +94,11 @@ function callGoogleAPI(imageData, response) {
       function testMovieNames(){
         var movieFound = false;
         textAnnotation.split('\n').forEach(function (val) {
+          console.log('val ',val);
           if(!movieFound){
             imdb.getReq({ name: val, year: 2016 }, function (err, data) {
               if (!err) {
-                console.log(data);
+                //console.log(data);
                 movieFound = true;
                 responseObject.title = data.title;
                 responseObject.runtime = data.runtime;
@@ -135,7 +136,7 @@ function callGoogleAPI(imageData, response) {
                   if(movieList){
                     movieList.forEach(function(item,index){
                       if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1){
-                        console.log('item found',item);
+                        //console.log('item found',item);
                         responseObject.trailer = item.trailer;
                         responseObject.theaters = item.theaters;
                       }
