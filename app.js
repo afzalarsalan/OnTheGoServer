@@ -60,7 +60,7 @@ function callGoogleAPI(imageData, response) {
     if (resultObject.textAnnotations) {
       var textAnnotation = resultObject.textAnnotations[0].description;
       console.log('textAnnotation Result', textAnnotation.split('\n'));
-      
+
       textAnnotation.split('\n').forEach(function (item1,index1) {
         if(item1.toLowerCase().indexOf('desert hacks') > -1){
           var childProcess = require('child_process');
@@ -73,10 +73,13 @@ function callGoogleAPI(imageData, response) {
           ];
            
           childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
-            // handle results 
-            console.log('err ',err);
-            console.log('stdout ',stdout);
-            console.log('stderr ',stderr);
+            if(stdout =='It is working'){
+              response.writeHead(200,  {"Content-Type": "application/json"});
+              var responseObjectTemp = {};
+              responseObjectTemp.registered = true;
+              console.log('responseObject ',responseObjectTemp);
+              response.end(JSON.stringify(responseObjectTemp));               
+            }
           });
         }
       });
