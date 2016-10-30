@@ -127,18 +127,20 @@ function callGoogleAPI(imageData, response) {
 
               api = new Showtimes(77004);
               api.getMovies(function(error, movieList){
-                movieList.forEach(function(item,index){
-                  if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1){
-                    console.log('item found',item);
-                    responseObject.trailer = item.trailer;
-                    responseObject.theaters = item.theaters;
-                  }
-                  if(movieList.length == (index+1)){
-                    response.writeHead(200,  {"Content-Type": "application/json"});
-                    console.log('responseObject ',responseObject);
-                    response.end(JSON.stringify(responseObject));                  
-                  }
-                });
+                if(movieList){
+                  movieList.forEach(function(item,index){
+                    if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1){
+                      console.log('item found',item);
+                      responseObject.trailer = item.trailer;
+                      responseObject.theaters = item.theaters;
+                    }
+                    if(movieList.length == (index+1)){
+                      response.writeHead(200,  {"Content-Type": "application/json"});
+                      console.log('responseObject ',responseObject);
+                      response.end(JSON.stringify(responseObject));                  
+                    }
+                  });
+                }
               });
             }
           });
