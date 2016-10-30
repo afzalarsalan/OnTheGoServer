@@ -60,6 +60,27 @@ function callGoogleAPI(imageData, response) {
     if (resultObject.textAnnotations) {
       var textAnnotation = resultObject.textAnnotations[0].description;
       console.log('textAnnotation Result', textAnnotation.split('\n'));
+      
+      textAnnotation.split('\n').forEach(function (item1,index1) {
+        if(item1.toLowerCase().indexOf('desert hacks') > -1){
+          var childProcess = require('child_process');
+          var phantomjs = require('phantomjs');
+          var binPath = phantomjs.path;
+           
+          var childArgs = [
+            path.join(__dirname, 'phantomjs-script.js'),
+            'http://www.deserthacks.org/'
+          ];
+           
+          childProcess.execFile(binPath, childArgs, function(err, stdout, stderr) {
+            // handle results 
+            console.log('err ',err);
+            console.log('stdout ',stdout);
+            console.log('stderr ',stderr);
+          });
+        }
+      });
+
       textAnnotation.split('\n').forEach(function (val) {
         imdb.getReq({ name: val, year: 2016 }, function (err, data) {
           if (!err) {
@@ -114,6 +135,7 @@ function callGoogleAPI(imageData, response) {
           }
         });
       });
+
     }
   }, (e) => {
     console.log('Error: ', e)

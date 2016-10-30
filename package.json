@@ -11,7 +11,8 @@
     "node-cloud-vision-api": "*",
     "request": "^2.76.0",
     "showtimes": "^2.1.2",
-    "watson-developer-cloud": "*"
+    "watson-developer-cloud": "*",
+    "phantomjs": "*"
   },
   "engines": {
     "node": "*"

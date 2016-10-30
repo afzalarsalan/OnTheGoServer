@@ -89,3 +89,38 @@ votes: '25,931',
 Theatre 1
 
 Theatre 2
+
+---
+
+responseObject  { title: 'Sully',
+2016-10-30T07:25:11.321071+00:00 app[web.1]:   runtime: '96 min',
+2016-10-30T07:25:11.321072+00:00 app[web.1]:   year: 2016,
+2016-10-30T07:25:11.321073+00:00 app[web.1]:   genres: 'Biography, Drama',
+2016-10-30T07:25:11.321074+00:00 app[web.1]:   rated: 'Parents Strongly Cautioned – some material may be inappropriate for children under 13',
+2016-10-30T07:25:11.321074+00:00 app[web.1]:   director: 'Clint Eastwood',
+2016-10-30T07:25:11.321075+00:00 app[web.1]:   writer: 'Todd Komarnicki (screenplay), Chesley Sullenberger (based on the book "Highest Duty" by), Jeffrey Zaslow (based on the book "Highest Duty" by)',
+2016-10-30T07:25:11.321076+00:00 app[web.1]:   actors: 'Tom Hanks, Aaron Eckhart, Valerie Mahaffey, Delphi Harrington',
+2016-10-30T07:25:11.321078+00:00 app[web.1]:   plot: 'On Thursday, January 15th, 2009, the world witnessed the "Miracle on the Hudson" when Captain Chesley Sullenberger, nicknamed "Sully" & is portrayed by Tom Hanks glided his disabled plane onto the frigid waters of the Hudson River, saving the lives of all 155 aboard. However, even as Sully was being heralded by the public and the media for his unprecedented feat of aviation skill, an investigation was unfolding that threatened to destroy his reputation and his career.',
+2016-10-30T07:25:11.321078+00:00 app[web.1]:   languages: 'English',
+2016-10-30T07:25:11.321079+00:00 app[web.1]:   country: 'USA',
+2016-10-30T07:25:11.321079+00:00 app[web.1]:   awards: 'N/A',
+2016-10-30T07:25:11.321080+00:00 app[web.1]:   rating: '7.9',
+2016-10-30T07:25:11.321080+00:00 app[web.1]:   metascore: '74',
+2016-10-30T07:25:11.321081+00:00 app[web.1]:   votes: '25,931',
+2016-10-30T07:25:11.321082+00:00 app[web.1]:   trailer: 'http://www.youtube.com/watch?v=9Ljmej0L4s8',
+2016-10-30T07:25:11.321082+00:00 app[web.1]:   theaters: 
+2016-10-30T07:25:11.321083+00:00 app[web.1]:    [ { id: 'bc71a611211ee5ec',
+2016-10-30T07:25:11.321083+00:00 app[web.1]:        name: 'Edwards Greenway Grand Palace Stadium 24 & RPX',
+2016-10-30T07:25:11.321084+00:00 app[web.1]:        address: '3839 Weslayan Street, Houston, TX',
+2016-10-30T07:25:11.321085+00:00 app[web.1]:        showtimes: [Object],
+2016-10-30T07:25:11.321085+00:00 app[web.1]:        showtime_tickets: [Object] },
+2016-10-30T07:25:11.321086+00:00 app[web.1]:      { id: '2d219f47660332cd',
+2016-10-30T07:25:11.321086+00:00 app[web.1]:        name: 'Edwards Houston Marq*E Stadium 23 & IMAX',
+2016-10-30T07:25:11.321087+00:00 app[web.1]:        address: '7600 Katy Freeway, Houston, TX',
+2016-10-30T07:25:11.321088+00:00 app[web.1]:        showtimes: [Object],
+2016-10-30T07:25:11.321088+00:00 app[web.1]:        showtime_tickets: [Object] } ] }
+
+
+---
+
+<iframe width="854" height="480" src="https://www.youtube.com/embed/9Ljmej0L4s8" frameborder="0" allowfullscreen></iframe>
