@@ -1,25 +1,91 @@
+item found { id: '36a88b6f7027b9e4',
+2016-10-30T06:16:04.621892+00:00 app[web.1]:   name: 'Sully',
+2016-10-30T06:16:04.621893+00:00 app[web.1]:   runtime: '1hr 36min',
+2016-10-30T06:16:04.621893+00:00 app[web.1]:   rating: 'PG-13',
+2016-10-30T06:16:04.621894+00:00 app[web.1]:   genre: [ 'Drama' ],
+2016-10-30T06:16:04.621895+00:00 app[web.1]:   imdb: 'http://www.imdb.com/title/tt3263904/',
+2016-10-30T06:16:04.621895+00:00 app[web.1]:   trailer: 'http://www.youtube.com/watch?v=9Ljmej0L4s8',
+2016-10-30T06:16:04.621896+00:00 app[web.1]:   director: 'Clint Eastwood',
+2016-10-30T06:16:04.621896+00:00 app[web.1]:   cast: 
+2016-10-30T06:16:04.621897+00:00 app[web.1]:    [ 'Tom Hanks',
+2016-10-30T06:16:04.621897+00:00 app[web.1]:      'Laura Linney',
+2016-10-30T06:16:04.621898+00:00 app[web.1]:      'Anna Gunn',
+2016-10-30T06:16:04.621898+00:00 app[web.1]:      'Aaron Eckhart',
+2016-10-30T06:16:04.621899+00:00 app[web.1]:      'Autumn Reeser' ],
+2016-10-30T06:16:04.621900+00:00 app[web.1]:   description: 'On January 15, 2009, the world witnessed the "Miracle on the Hudson" when Captain "Sully" Sullenberger glided his disabled plane onto the frigid waters of the Hudson River, saving the lives of all 155 aboard.  However, even as Sully was being heralded by the public and',
+2016-10-30T06:16:04.621900+00:00 app[web.1]:   theaters: 
+2016-10-30T06:16:04.621901+00:00 app[web.1]:    [ { id: 'bc71a611211ee5ec',
+2016-10-30T06:16:04.621901+00:00 app[web.1]:        name: 'Edwards Greenway Grand Palace Stadium 24 & RPX',
+2016-10-30T06:16:04.621902+00:00 app[web.1]:        address: '3839 Weslayan Street, Houston, TX',
+2016-10-30T06:16:04.621902+00:00 app[web.1]:        showtimes: [Object],
+2016-10-30T06:16:04.621903+00:00 app[web.1]:        showtime_tickets: [Object] },
+2016-10-30T06:16:04.621903+00:00 app[web.1]:      { id: '2d219f47660332cd',
+2016-10-30T06:16:04.621904+00:00 app[web.1]:        name: 'Edwards Houston Marq*E Stadium 23 & IMAX',
+2016-10-30T06:16:04.621904+00:00 app[web.1]:        address: '7600 Katy Freeway, Houston, TX',
+2016-10-30T06:16:04.621905+00:00 app[web.1]:        showtimes: [Object],
+2016-10-30T06:16:04.621905+00:00 app[web.1]:        showtime_tickets: [Object] } ] }
 
-2016-10-30T03:46:22.037613+00:00 app[web.1]: Movie {
-2016-10-30T03:46:22.037616+00:00 app[web.1]:   title: 'Inferno',
-2016-10-30T03:46:22.037618+00:00 app[web.1]:   _year_data: '2016',
-2016-10-30T03:46:22.037619+00:00 app[web.1]:   year: 2016,
-2016-10-30T03:46:22.037620+00:00 app[web.1]:   rated: 'PG-13',
-2016-10-30T03:46:22.037621+00:00 app[web.1]:   released: Fri Oct 28 2016 00:00:00 GMT+0000 (UTC),
-2016-10-30T03:46:22.037622+00:00 app[web.1]:   runtime: '121 min',
-2016-10-30T03:46:22.037624+00:00 app[web.1]:   genres: 'Action, Crime, Drama',
-2016-10-30T03:46:22.037624+00:00 app[web.1]:   director: 'Ron Howard',
-2016-10-30T03:46:22.037625+00:00 app[web.1]:   writer: 'Dan Brown (based on the novel by), David Koepp (screenplay)',
-2016-10-30T03:46:22.037626+00:00 app[web.1]:   actors: 'Ben Foster, Tom Hanks, Sidse Babett Knudsen, Felicity Jones',
-2016-10-30T03:46:22.037628+00:00 app[web.1]:   plot: 'Academy Award® winner Ron Howard returns to direct the latest bestseller in Dan Brown\'s (Da Vinci Code) billion-dollar Robert Langdon series, Inferno, which finds the famous symbologist (again played by Tom Hanks) on a trail of clues tied to the great Dante himself. When Langdon wakes up in an Italian hospital with amnesia, he teams up with Sienna Brooks (Felicity Jones), a doctor he hopes will help him recover his memories. Together, they race across Europe and against the clock to stop a madman from unleashing a global virus that would wipe out half of the world\'s population.',
-2016-10-30T03:46:22.037629+00:00 app[web.1]:   languages: 'English',
-2016-10-30T03:46:22.037629+00:00 app[web.1]:   country: 'USA, Japan, Turkey, Hungary',
-2016-10-30T03:46:22.037630+00:00 app[web.1]:   awards: 'N/A',
-2016-10-30T03:46:22.037631+00:00 app[web.1]:   poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTUzNTE2NTkzMV5BMl5BanBnXkFtZTgwMDAzOTUyMDI@._V1_SX300.jpg',
-2016-10-30T03:46:22.037632+00:00 app[web.1]:   metascore: 'N/A',
-2016-10-30T03:46:22.037632+00:00 app[web.1]:   rating: '7.1',
-2016-10-30T03:46:22.037633+00:00 app[web.1]:   votes: '359',
-2016-10-30T03:46:22.037634+00:00 app[web.1]:   imdbid: 'tt3062096',
-2016-10-30T03:46:22.037634+00:00 app[web.1]:   type: 'movie',
-2016-10-30T03:46:22.037635+00:00 app[web.1]:   response: 'True',
-2016-10-30T03:46:22.037636+00:00 app[web.1]:   series: false,
-2016-10-30T03:46:22.037636+00:00 app[web.1]:   imdburl: 'https://www.imdb.com/title/tt3062096' }
+----
+
+2016-10-30T06:16:03.104734+00:00 app[web.1]: Movie {
+2016-10-30T06:16:03.104737+00:00 app[web.1]:   title: 'Sully',
+2016-10-30T06:16:03.104738+00:00 app[web.1]:   _year_data: '2016',
+2016-10-30T06:16:03.104739+00:00 app[web.1]:   year: 2016,
+2016-10-30T06:16:03.104740+00:00 app[web.1]:   rated: 'PG-13',
+2016-10-30T06:16:03.104741+00:00 app[web.1]:   released: Fri Sep 09 2016 00:00:00 GMT+0000 (UTC),
+2016-10-30T06:16:03.104741+00:00 app[web.1]:   runtime: '96 min',
+2016-10-30T06:16:03.104742+00:00 app[web.1]:   genres: 'Biography, Drama',
+2016-10-30T06:16:03.104742+00:00 app[web.1]:   director: 'Clint Eastwood',
+2016-10-30T06:16:03.104745+00:00 app[web.1]:   writer: 'Todd Komarnicki (screenplay), Chesley Sullenberger (based on the book "Highest Duty" by), Jeffrey Zaslow (based on the book "Highest Duty" by)',
+2016-10-30T06:16:03.104746+00:00 app[web.1]:   actors: 'Tom Hanks, Aaron Eckhart, Valerie Mahaffey, Delphi Harrington',
+2016-10-30T06:16:03.104752+00:00 app[web.1]:   plot: 'On Thursday, January 15th, 2009, the world witnessed the "Miracle on the Hudson" when Captain Chesley Sullenberger, nicknamed "Sully" & is portrayed by Tom Hanks glided his disabled plane onto the frigid waters of the Hudson River, saving the lives of all 155 aboard. However, even as Sully was being heralded by the public and the media for his unprecedented feat of aviation skill, an investigation was unfolding that threatened to destroy his reputation and his career.',
+2016-10-30T06:16:03.104753+00:00 app[web.1]:   languages: 'English',
+2016-10-30T06:16:03.104754+00:00 app[web.1]:   country: 'USA',
+2016-10-30T06:16:03.104755+00:00 app[web.1]:   awards: 'N/A',
+2016-10-30T06:16:03.104755+00:00 app[web.1]:   poster: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTg5NTUwNDIyOV5BMl5BanBnXkFtZTgwMjI2OTc3OTE@._V1_SX300.jpg',
+2016-10-30T06:16:03.104756+00:00 app[web.1]:   metascore: '74',
+2016-10-30T06:16:03.104757+00:00 app[web.1]:   rating: '7.9',
+2016-10-30T06:16:03.104757+00:00 app[web.1]:   votes: '25,931',
+2016-10-30T06:16:03.104758+00:00 app[web.1]:   imdbid: 'tt3263904',
+2016-10-30T06:16:03.104759+00:00 app[web.1]:   type: 'movie',
+2016-10-30T06:16:03.104759+00:00 app[web.1]:   response: 'True',
+2016-10-30T06:16:03.104760+00:00 app[web.1]:   series: false,
+2016-10-30T06:16:03.104760+00:00 app[web.1]:   imdburl: 'https://www.imdb.com/title/tt3263904' }
+
+
+---
+
+Rated G: General Audiences – all ages admitted
+Rated PG: Parental Guidance Suggested – some material may not be suitable for children
+Rated PG-13: Parents Strongly Cautioned – some material may be inappropriate for children under 13
+Rated R: Restricted – under 17 requires accompanying parent or adult guardian
+Rated NC-17: No children under 17 admitted [1990–1996] / No one 17 and under admitted [1996–present]
+
+
+---
+
+title : Sully
+runtime  : 96 min
+year : 2016
+
+genres : Biography, Drama
+rated : Parents Strongly Cautioned – some material may be inappropriate for children under 13
+
+director : Clint Eastwood
+writer: 'Todd Komarnicki (screenplay), Chesley Sullenberger (based on the book "Highest Duty" by), Jeffrey Zaslow (based on the book "Highest Duty" by)'
+
+actors: 'Tom Hanks, Aaron Eckhart, Valerie Mahaffey, Delphi Harrington',
+
+plot: 'On Thursday, January 15th, 2009, the world witnessed the "Miracle on the Hudson" when Captain Chesley Sullenberger, nicknamed "Sully" & is portrayed by Tom Hanks glided his disabled plane onto the frigid waters of the Hudson River, saving the lives of all 155 aboard. However, even as Sully was being heralded by the public and the media for his unprecedented feat of aviation skill, an investigation was unfolding that threatened to destroy his reputation and his career.',
+
+languages: 'English',
+country: 'USA',
+awards: 'N/A',
+
+metascore: '74',
+rating: '7.9',
+votes: '25,931',
+
+Theatre 1
+
+Theatre 2
