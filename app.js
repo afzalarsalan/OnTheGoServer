@@ -83,6 +83,8 @@ function callGoogleAPI(imageData, response) {
               testMovieNames();
             }
           });
+        }else{
+          testMovieNames();
         }
       });
 
