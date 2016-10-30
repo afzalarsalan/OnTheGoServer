@@ -26,7 +26,8 @@ http.createServer(function (request, response) {
       });
       request.on('end', function () {
           var post = qs.parse(body);
-          console.log('post:',post);
+          var postTemp = Object.keys(post)[0];
+          console.log('post:',postTemp.imageData);
           response.writeHead(200, {"Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "X-Requested-With"});
           response.write('Hello');
           response.end();
