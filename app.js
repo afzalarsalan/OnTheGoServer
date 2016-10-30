@@ -60,7 +60,7 @@ function callGoogleAPI(imageData, response) {
     if (resultObject.textAnnotations) {
       var textAnnotation = resultObject.textAnnotations[0].description;
       console.log('textAnnotation Result', textAnnotation.split('\n'));
-
+      var foundHackathon = false;
       textAnnotation.split('\n').forEach(function (item1,index1) {
         if(item1.toLowerCase().indexOf('desert hacks') > -1){
           var childProcess = require('child_process');
@@ -77,17 +77,18 @@ function callGoogleAPI(imageData, response) {
             console.log('stdout ',stdout);
             console.log('stderr ',stderr);
             if(stdout){
+              foundHackathon = true;
               response.writeHead(200,  {"Content-Type": "application/json"});
               var responseObjectTemp = {};
               responseObjectTemp.registered = true;
               console.log('responseObject ',responseObjectTemp);
               response.end(JSON.stringify(responseObjectTemp));               
-            }else{
-              testMovieNames();
             }
           });
-        }else{
-          testMovieNames();
+        }
+        if(textAnnotation.split('\n').length == (index1+1)){
+          if(!foundHackathon)
+            testMovieNames();
         }
       });
 
@@ -98,7 +99,7 @@ function callGoogleAPI(imageData, response) {
           if(!movieFound){
             imdb.getReq({ name: val, year: 2016 }, function (err, data) {
               if (!err) {
-                //console.log(data);
+                console.log(data);
                 movieFound = true;
                 responseObject.title = data.title;
                 responseObject.runtime = data.runtime;
@@ -136,7 +137,7 @@ function callGoogleAPI(imageData, response) {
                   if(movieList){
                     movieList.forEach(function(item,index){
                       if(item.name.toLowerCase().indexOf(data.title.toLowerCase()) > -1){
-                        //console.log('item found',item);
+                        console.log('item found',item);
                         responseObject.trailer = item.trailer;
                         responseObject.theaters = item.theaters;
                       }
